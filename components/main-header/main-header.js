@@ -22,7 +22,7 @@ function MainHeader() {
               <NavLink href="/pages/meals">Browse Meals</NavLink>
             </li>
             <li>
-              <NavLink href="/pages/community">Browse Meals</NavLink>
+              <NavLink href="/pages/community">Foodies Community</NavLink>
             </li>
           </ul>
         </nav>
