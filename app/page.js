@@ -1,6 +1,7 @@
-import Link from "next/link";
-import classes from "./page.module.css";
-import ImageSlideshow from "@/components/images/image-slideshow";
+import Link from 'next/link'
+import classes from './page.module.css'
+import ImageSlideshow from '@/components/images/image-slideshow'
+
 export default function Home() {
   return (
     <>
@@ -13,8 +14,8 @@ export default function Home() {
             <p>Taste and share food from all over the word</p>
           </div>
           <div className={classes.cta}>
-            <Link href="/pages/community">Joinm the Community</Link>
-            <Link href="/pages/meals"> Explore Meals</Link>
+            <Link href='/pages/community'>Joinm the Community</Link>
+            <Link href='/pages/meals'> Explore Meals</Link>
           </div>
         </div>
       </header>
@@ -46,5 +47,5 @@ export default function Home() {
         </section>
       </main>
     </>
-  );
+  )
 }
