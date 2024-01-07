@@ -1,8 +1,16 @@
-import React from "react";
-import classes from "./page.module.css";
-import Link from "next/link";
-import MealsGrid from "@/components/meals/meals-grid";
-function Meals() {
+import React, { Suspense } from 'react'
+import classes from './page.module.css'
+import Link from 'next/link'
+import MealsGrid from '@/components/meals/meals-grid'
+import { getMeals } from '@/lib/meals'
+
+async function Meals() {
+  const meals = await getMeals()
+
+  return <MealsGrid meals={meals} />
+}
+
+export default function MealsPage() {
   return (
     <>
       <header className={classes.header}>
@@ -14,14 +22,15 @@ function Meals() {
           Choose your favourite recipe and cook it yourself. It is easy and fun!
         </p>
         <p className={classes.cta}>
-          <Link href="/pages/meals/share">Share your favourite recipe</Link>
+          <Link href='/pages/meals/share'>Share your favourite recipe</Link>
         </p>
       </header>
       <main className={classes.main}>
-        <MealsGrid meals={[]} />
+        <Suspense
+          fallback={<p className={classes.loading}>Fetching meals...</p>}>
+          <Meals />
+        </Suspense>
       </main>
     </>
-  );
+  )
 }
-
-export default Meals;
