@@ -37,7 +37,6 @@ export default function ImageSlideshow() {
 
   return (
     <div className={classes.slideshow}>
-      <img src={burgerImg} />
       {images.map((image, index) => (
         <Image
           key={index}
