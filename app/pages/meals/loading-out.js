@@ -1,5 +1,5 @@
 import classes from './loading.module.css'
 
 export default function MealsLoadingPage() {
-  return
+  return <p className={classes.loading}></p>
 }
